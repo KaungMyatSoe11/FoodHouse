@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_A68B42_kmsoe11" Class="DbContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SQL5060.site4now.net;Initial Catalog=DB_A68B42_kmsoe11;User ID=DB_A68B42_kmsoe11_admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FoodDeliverConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Admin" Member="tbl_Admins">
+    <Type Name="tbl_Admin">
+      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdminName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.City" Member="tbl_Cities">
+    <Type Name="tbl_City" Id="ID1">
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_City_tbl_Restaurant" Member="tbl_Restaurants" ThisKey="CityID" OtherKey="CityID" Type="tbl_Restaurant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="tbl_Categories">
+    <Type Name="tbl_Category">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_Category_tbl_Restaurant" Member="tbl_Restaurants" ThisKey="CategoryID" OtherKey="CategoryID" Type="tbl_Restaurant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Restaurant" Member="tbl_Restaurants">
+    <Type Name="tbl_Restaurant" Id="ID4">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="R_Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R_Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RLogo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tbl_Category_tbl_Restaurant" Member="tbl_Category" ThisKey="CategoryID" OtherKey="CategoryID" Type="tbl_Category" IsForeignKey="true" />
+      <Association Name="tbl_City_tbl_Restaurant" Member="tbl_City" ThisKey="CityID" OtherKey="CityID" Type="tbl_City" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vi_Restaurant" Member="vi_Restaurants">
+    <Type Name="vi_Restaurant" Id="ID2">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R_Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="R_Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RLogo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="tbl_Customers">
+    <Type Name="tbl_Customer" Id="ID3">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeliveryMan" Member="tbl_DeliveryMans">
+    <Type Name="tbl_DeliveryMan">
+      <Column Name="DeliveryManID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeliveryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vi_DeliveryMan" Member="vi_DeliveryMans">
+    <Type Name="vi_DeliveryMan">
+      <Column Name="DeliveryManID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DeliveryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Discount" Member="tbl_Discounts">
+    <Type Name="tbl_Discount">
+      <Column Name="DiscountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DiscountPercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FoodItem" Member="tbl_FoodItems">
+    <Type Name="tbl_FoodItem">
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FoodName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DiscountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisStartDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisEndDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vi_RFood" Member="vi_RFoods">
+    <Type Name="vi_RFood">
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FoodName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DisStartDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisEndDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vi_CustomerFood" Member="vi_CustomerFoods">
+    <Type Name="vi_CustomerFood">
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FoodName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DiscountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiscountPercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisStartDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisEndDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderDetail" Member="tbl_OrderDetails">
+    <Type Name="tbl_OrderDetail">
+      <Column Name="OID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="tbl_Orders">
+    <Type Name="tbl_Order">
+      <Column Name="OID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ODate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ONumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GrandTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShippingAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveryManID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_DeleteAdmin" Method="SP_DeleteAdmin">
+    <Parameter Name="param1" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectAllCity" Method="SelectAllCity">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.SelectAllResturant" Method="SelectAllResturant">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.CustomerLogIn" Method="CustomerLogIn">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.RestaurantLogIn" Method="RestaurantLogIn">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType IdRef="ID4" />
+  </Function>
+</Database>

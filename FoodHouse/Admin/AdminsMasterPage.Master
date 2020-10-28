@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminsMasterPage.master.cs" Inherits="FoodHouse.Admin.AdminsMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <style>
+        * {
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        .nav {
+            height:60px;
+            width:100%;
+            /*background-color:blue;*/
+        }
+        .nav-1 {
+            width:50%;
+            background-color:red;
+            height:60px;
+            float:right;
+        }
+        ul {
+            height:60px;
+              margin: 0;
+              padding: 0;
+            }
+
+        li {
+            display:inline;
+            height:60px;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 21px 90px 0px;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script src="../bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <link href="../bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            
+        </asp:ScriptManager>
+        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+        <a class="nav-item text-decoration-none" href="../Default.aspx"><h2>FoodHouse</h2></a>
+        <ul class="navbar-nav form-inline ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Category</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="City.aspx">City</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="RestaurantList.aspx">Restaurant</a>
+            </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="DeliveryManList.aspx">DeliverMan</a>
+            </li>
+        </ul>
+    </nav>
+    
+        <asp:ContentPlaceHolder  id="ContentPlaceHolder1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        </asp:ContentPlaceHolder>
+   
+    </form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RestaurantMasterPage.Master.cs" Inherits="FoodHouse.Restaurant.RestaurantMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title></title>
+ 
+    <style>
+        * {
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        body{
+            background-image: url(F2.jpg);
+            background-size: cover;
+             background-repeat: no-repeat; 
+            background-attachment: scroll;
+            /* background-size: 100%; */
+            /* border-image-repeat: stretch;*/
+            height:100vh;
+            line-height:2!important;
+            
+         
+            
+
+        }
+        .nav {
+            height:60px;
+            width:100%;
+            background-color:blue;
+            position:fixed;
+            top:0px;
+
+        }
+        .nav-1 {
+            width:50%;
+            background-color:red;
+            height:60px;
+            float:right;
+        }
+        ul {
+            height:60px;
+              margin: 0;
+              padding: 0;
+            }
+
+        li {
+            display:inline;
+            height:60px;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 21px 90px 0px;
+            text-decoration: none;
+        }
+    </style>
+      <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <%--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+         <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+        <a class="nav-item text-decoration-none" href="../Index.aspx"><h1>FoodHouse</h1></a>
+        <ul class="navbar-nav form-inline ml-auto">
+            
+            <li class="nav-item active">
+                <a class="nav-link" href="FoodEntry.aspx">FoodItem</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="FoodItemList.aspx">FoodItemList</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="Discount.aspx">Discount</a>
+            </li>
+        </ul>
+    </nav>
+    <div >
+      <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
