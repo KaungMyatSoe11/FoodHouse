@@ -75,8 +75,17 @@
         <a class="nav-item text-decoration-none" href="../Default.aspx"><h1>FoodHouse</h1></a>
         <ul class="navbar-nav form-inline ml-auto">
             <li class="nav-item active">
-                <a class="nav-link"  href="Cart.aspx">Cart <asp:Label Text="" ID="lblcart"  runat="server" /> </a>
                 <a class="nav-link" href="../SignIn.aspx">SignIn</a>
+
+            </li>
+
+            <li class="nav-item active"><a class="nav-link" href="Cart.aspx">Cart
+               <asp:Label Text="" ID="lblcart" runat="server" />
+
+            </a></li>
+             <li class="nav-item active">
+                <a class="nav-link" href="Customer/COrderList.aspx">History</a>
+
             </li>
         </ul>
     </nav>

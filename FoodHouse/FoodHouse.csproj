@@ -123,6 +123,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Customer\Cart.aspx" />
     <Content Include="Customer\CFoodItemList.aspx" />
+    <Content Include="Customer\COrderList.aspx" />
     <Content Include="Customer\Order.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Image\p.jpg" />
@@ -351,6 +352,13 @@
     </Compile>
     <Compile Include="Customer\CFoodItemList.aspx.designer.cs">
       <DependentUpon>CFoodItemList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\COrderList.aspx.cs">
+      <DependentUpon>COrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\COrderList.aspx.designer.cs">
+      <DependentUpon>COrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\Customer.Master.cs">
       <DependentUpon>Customer.Master</DependentUpon>

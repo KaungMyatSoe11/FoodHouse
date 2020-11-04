@@ -204,6 +204,14 @@ namespace FoodHouse
 			}
 		}
 		
+		public System.Data.Linq.Table<vi_FoodOrderList> vi_FoodOrderLists
+		{
+			get
+			{
+				return this.GetTable<vi_FoodOrderList>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_DeleteAdmin")]
 		public int SP_DeleteAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> param1)
 		{
@@ -237,6 +245,13 @@ namespace FoodHouse
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, password);
 			return ((ISingleResult<tbl_Restaurant>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.OrderdatebyCID")]
+		public ISingleResult<OrderdatebyCIDResult> OrderdatebyCID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerID", DbType="Int")] System.Nullable<int> customerID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerID);
+			return ((ISingleResult<OrderdatebyCIDResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2902,6 +2917,347 @@ namespace FoodHouse
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vi_FoodOrderList")]
+	public partial class vi_FoodOrderList
+	{
+		
+		private int _OID;
+		
+		private string _ONumber;
+		
+		private string _ODate;
+		
+		private int _FID;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private string _Status;
+		
+		private System.Nullable<int> _RID;
+		
+		private string _RName;
+		
+		private string _FoodName;
+		
+		private System.Nullable<int> _DiscountID;
+		
+		private string _DiscountPercentage;
+		
+		private string _ShippingAddress;
+		
+		private System.Nullable<int> _CustomerID;
+		
+		private string _CustomerName;
+		
+		private System.Nullable<int> _Price;
+		
+		private System.Nullable<int> _GrandTotal;
+		
+		public vi_FoodOrderList()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OID", DbType="Int NOT NULL")]
+		public int OID
+		{
+			get
+			{
+				return this._OID;
+			}
+			set
+			{
+				if ((this._OID != value))
+				{
+					this._OID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ONumber", DbType="NVarChar(MAX)")]
+		public string ONumber
+		{
+			get
+			{
+				return this._ONumber;
+			}
+			set
+			{
+				if ((this._ONumber != value))
+				{
+					this._ONumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ODate", DbType="NVarChar(MAX)")]
+		public string ODate
+		{
+			get
+			{
+				return this._ODate;
+			}
+			set
+			{
+				if ((this._ODate != value))
+				{
+					this._ODate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int NOT NULL")]
+		public int FID
+		{
+			get
+			{
+				return this._FID;
+			}
+			set
+			{
+				if ((this._FID != value))
+				{
+					this._FID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int")]
+		public System.Nullable<int> RID
+		{
+			get
+			{
+				return this._RID;
+			}
+			set
+			{
+				if ((this._RID != value))
+				{
+					this._RID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RName", DbType="NVarChar(50)")]
+		public string RName
+		{
+			get
+			{
+				return this._RName;
+			}
+			set
+			{
+				if ((this._RName != value))
+				{
+					this._RName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FoodName", DbType="NVarChar(50)")]
+		public string FoodName
+		{
+			get
+			{
+				return this._FoodName;
+			}
+			set
+			{
+				if ((this._FoodName != value))
+				{
+					this._FoodName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountID", DbType="Int")]
+		public System.Nullable<int> DiscountID
+		{
+			get
+			{
+				return this._DiscountID;
+			}
+			set
+			{
+				if ((this._DiscountID != value))
+				{
+					this._DiscountID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiscountPercentage", DbType="NVarChar(50)")]
+		public string DiscountPercentage
+		{
+			get
+			{
+				return this._DiscountPercentage;
+			}
+			set
+			{
+				if ((this._DiscountPercentage != value))
+				{
+					this._DiscountPercentage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingAddress", DbType="NVarChar(MAX)")]
+		public string ShippingAddress
+		{
+			get
+			{
+				return this._ShippingAddress;
+			}
+			set
+			{
+				if ((this._ShippingAddress != value))
+				{
+					this._ShippingAddress = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int")]
+		public System.Nullable<int> CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this._CustomerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(50)")]
+		public string CustomerName
+		{
+			get
+			{
+				return this._CustomerName;
+			}
+			set
+			{
+				if ((this._CustomerName != value))
+				{
+					this._CustomerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int")]
+		public System.Nullable<int> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GrandTotal", DbType="Int")]
+		public System.Nullable<int> GrandTotal
+		{
+			get
+			{
+				return this._GrandTotal;
+			}
+			set
+			{
+				if ((this._GrandTotal != value))
+				{
+					this._GrandTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class OrderdatebyCIDResult
+	{
+		
+		private string _ONumber;
+		
+		private string _ODate;
+		
+		public OrderdatebyCIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ONumber", DbType="NVarChar(MAX)")]
+		public string ONumber
+		{
+			get
+			{
+				return this._ONumber;
+			}
+			set
+			{
+				if ((this._ONumber != value))
+				{
+					this._ONumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ODate", DbType="NVarChar(MAX)")]
+		public string ODate
+		{
+			get
+			{
+				return this._ODate;
+			}
+			set
+			{
+				if ((this._ODate != value))
+				{
+					this._ODate = value;
+				}
 			}
 		}
 	}

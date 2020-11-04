@@ -158,6 +158,26 @@
       <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vi_FoodOrderList" Member="vi_FoodOrderLists">
+    <Type Name="vi_FoodOrderList">
+      <Column Name="OID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ONumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ODate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FoodName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiscountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiscountPercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShippingAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrandTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_DeleteAdmin" Method="SP_DeleteAdmin">
     <Parameter Name="param1" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -177,5 +197,12 @@
     <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(30)" />
     <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(MAX)" />
     <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.OrderdatebyCID" Method="OrderdatebyCID">
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="OrderdatebyCIDResult">
+      <Column Name="ONumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ODate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

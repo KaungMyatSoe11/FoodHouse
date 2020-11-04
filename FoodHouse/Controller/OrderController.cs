@@ -1,6 +1,7 @@
 ﻿using FoodHouse.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Web;
 
@@ -16,7 +17,7 @@ namespace FoodHouse.Controller
               
                 _Order.CustomerID = order.CustomerID;
                 _Order.ODate = order.ODate;
-           
+                _Order.ONumber = GetONumber(DateTime.Now.ToShortDateString());
                 _Order.GrandTotal = order.GrandTotal;
                 _Order.Status = "Order Pending";
                 _Order.ShippingAddress = order.ShippingAddress;
@@ -37,6 +38,24 @@ namespace FoodHouse.Controller
                     _OrderDetail.Description = data.Description;
                     db.tbl_OrderDetails.InsertOnSubmit(_OrderDetail);
                     db.SubmitChanges();
+                }
+            }
+        }
+
+        public String GetONumber(String Date)
+        {
+            using(DbContextDataContext db=new DbContextDataContext())
+            {
+                var data = (from a in db.tbl_Orders where a.ODate == Date select a.ONumber).Max();
+                if(data==null)
+                {
+                    return "00000001";
+                }
+                else
+                {
+                   
+                    int onum =Convert.ToInt32(data) + 1;
+                    return (string.Format("{0:D8}", onum));
                 }
             }
         }
