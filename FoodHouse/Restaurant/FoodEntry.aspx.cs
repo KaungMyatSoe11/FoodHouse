@@ -78,7 +78,7 @@ namespace FoodHouse.Restaurant
                 food.Status = chkStuatus.Checked ? "Available" : "NotAvailable";
                 foodItemContoller.UpdateFood(food);
                 Session["FID"] = null;
-                Response.Redirect("View.aspx");
+                Response.Redirect("~/Restaurant/FoodItemList.aspx");
             }
 
         }

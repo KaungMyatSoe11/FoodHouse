@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer/Customer.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FoodHouse.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FoodHouse.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -30,5 +30,5 @@
         <%-- <asp:TextBox runat="server" TextMode="Date" />   --%>
          <asp:LinkButton   Text="See More>>> " CssClass="btn-link" runat="server" />
 </div>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FoodDeliverConnectionString %>" SelectCommand="SELECT TOP (6) RID, RName, PhoneNumber, Address, CityID, CityName, R_Email, R_Password, UpdateDate, RLogo, Website, CategoryID, CategoryName, Status FROM vi_Restaurant"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FoodDeliverConnectionString %>" SelectCommand="SELECT TOP (6) RID, RName, PhoneNumber, Address, CityID, CityName, R_Email, R_Password, UpdateDate, RLogo, Website, CategoryID, CategoryName, Status  FROM vi_Restaurant Where Status <> 'Pending'"></asp:SqlDataSource>
 </asp:Content>

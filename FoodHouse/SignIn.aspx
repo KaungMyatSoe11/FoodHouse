@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer/Customer.Master" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="FoodHouse.SignIn" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="FoodHouse.SignIn" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,7 +19,7 @@
                 <div class="form-group w-100 ">
                     <asp:Label Text="Email" runat="server" />
                    
-                    <asp:TextBox runat="server" ID="txtEmail" TextMode="Email" CssClass="form-control w-100 " AutoCompleteType="None" required TabIndex="1" />
+                    <asp:TextBox runat="server" ID="txtEmail"  CssClass="form-control w-100 " AutoCompleteType="None" required TabIndex="1" />
                 </div>
 
                 <div class="form-group  w-100  ">

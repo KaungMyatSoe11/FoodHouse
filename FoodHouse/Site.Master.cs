@@ -6,21 +6,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FoodHouse.Customer
+namespace FoodHouse
 {
-    public partial class Customer : System.Web.UI.MasterPage
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["c"] != null)
             {
-                var data =(List<cart>) Session["c"];
-                lblcart.Text = data.Count().ToString() ;
+                var data = (List<cart>)Session["c"];
+                lblcart.Text = data.Count().ToString();
             }
-            //if(Session["CID"] ==null)
-            //{
-            //    Response.Redirect("~/SignIn.aspx");
-            //}
         }
     }
 }

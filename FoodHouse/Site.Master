@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer.master.cs" Inherits="FoodHouse.Customer.Customer" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FoodHouse.Site" %>
 
 <!DOCTYPE html>
 
@@ -6,58 +6,7 @@
 <head runat="server">
     <title></title>
  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
- <%--   <style>
-        * {
-            padding:0;
-            margin:0;
-            box-sizing:border-box;
-            font-family: 'Noto Sans', sans-serif;
-
-        }
-        body{
-            background-image: url(../Image/p.jpg);
-            background-size: cover;
-            height:100vh;
-            line-height:2!important;
-            
-         
-            
-
-        }
-        .nav {
-            height:60px;
-            width:100%;
-            background-color:blue;
-            position:fixed;
-            top:0px;
-
-        }
-        .nav-1 {
-            width:50%;
-            background-color:red;
-            height:60px;
-            float:right;
-        }
-        ul {
-            height:60px;
-              margin: 0;
-              padding: 0;
-            }
-
-        li {
-            display:inline;
-            height:60px;
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 21px 90px 0px;
-            text-decoration: none;
-        }
-    </style>--%>
+   
       <link href="../Content/bootstrap.css" rel="stylesheet" />
     <script src="../bootstrap-4.3.1-dist/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -67,24 +16,23 @@
        
     </asp:ContentPlaceHolder>
 </head>
-
 <body>
-    <form id="form1" runat="server">
+     <form id="form1" runat="server">
          <asp:ScriptManager runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
         <a class="nav-item text-decoration-none" href="../Default.aspx"><h1>FoodHouse</h1></a>
         <ul class="navbar-nav form-inline ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="../SignIn.aspx">SignIn</a>
+                <a class="nav-link" href="SignIn.aspx">SignIn</a>
 
             </li>
 
-            <li class="nav-item active"><a class="nav-link" href="Cart.aspx">Cart
+            <li class="nav-item active"><a class="nav-link" href="Customer/Cart.aspx">Cart
                <asp:Label Text="" ID="lblcart" runat="server" />
 
             </a></li>
              <li class="nav-item active">
-                <a class="nav-link" href="COrderList.aspx">History</a>
+                <a class="nav-link" href="Customer/COrderList.aspx">History</a>
 
             </li>
         </ul>

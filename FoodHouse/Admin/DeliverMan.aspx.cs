@@ -85,6 +85,7 @@ namespace FoodHouse.Admin
                 deliveryMan.CityID = Convert.ToInt32(ddlCity.SelectedValue);
                 deliveryManController.UpdateDeliveryMan(deliveryMan);
                 Session["DeliveryManID"] = null;
+                Response.Redirect("DeliveryManList.aspx");
             }
             
         }

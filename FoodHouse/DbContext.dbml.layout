@@ -33,7 +33,7 @@
         <classShapeMoniker Id="03b4b788-96d0-4334-bf02-9558b36ab335" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 2.78449625651042); (6.375 : 2.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 2.78449625651042); (6.375 : 2.78449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbContextDataContext/tbl_City/tbl_City_tbl_Restaurant" />
       <nodes>
         <classShapeMoniker Id="269d743c-5020-4548-9ae1-7cae6f13a671" />

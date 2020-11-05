@@ -36,7 +36,7 @@ flex-direction: column;
         <div class="entry">
             <asp:Button CssClass="btn btn-success" Text="Save" ID="btnSave" runat="server" OnClick="btnSave_Click" />
             &nbsp &nbsp &nbsp
-            <asp:LinkButton Text="Cancel" ID="LbtCancel" CssClass="btn btn-danger" PostBackUrl="~/Restaurant/FoodItemList.aspx" runat="server" />
+            <asp:LinkButton Text="Cancel" ID="LbtCancel" CssClass="btn btn-danger" PostBackUrl="~/Admin/DeliveryManList.aspx" runat="server" />
         </div>
 
     </div>

@@ -253,6 +253,13 @@ namespace FoodHouse
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerID);
 			return ((ISingleResult<OrderdatebyCIDResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AdminLogIn")]
+		public ISingleResult<AdminLogInResult> AdminLogIn([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(30)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(MAX)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, password);
+			return ((ISingleResult<AdminLogInResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
@@ -3257,6 +3264,86 @@ namespace FoodHouse
 				if ((this._ODate != value))
 				{
 					this._ODate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AdminLogInResult
+	{
+		
+		private int _AdminID;
+		
+		private string _AdminName;
+		
+		private string _Password;
+		
+		private string _UpdateDate;
+		
+		public AdminLogInResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminID", DbType="Int NOT NULL")]
+		public int AdminID
+		{
+			get
+			{
+				return this._AdminID;
+			}
+			set
+			{
+				if ((this._AdminID != value))
+				{
+					this._AdminID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminName", DbType="NVarChar(50)")]
+		public string AdminName
+		{
+			get
+			{
+				return this._AdminName;
+			}
+			set
+			{
+				if ((this._AdminName != value))
+				{
+					this._AdminName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateDate", DbType="NVarChar(50)")]
+		public string UpdateDate
+		{
+			get
+			{
+				return this._UpdateDate;
+			}
+			set
+			{
+				if ((this._UpdateDate != value))
+				{
+					this._UpdateDate = value;
 				}
 			}
 		}

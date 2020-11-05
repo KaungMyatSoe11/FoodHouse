@@ -21,14 +21,22 @@ namespace FoodHouse.Customer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if(Session["c"] !=null)
             {
-                Addfood();
-                ListView1.Items.Clear();
-                ListView1.DataSource = checkoutFoods;
-                ListView1.DataBind();
-                Calculate_Total();
+                if (!IsPostBack)
+                {
+                    Addfood();
+                    ListView1.Items.Clear();
+                    ListView1.DataSource = checkoutFoods;
+                    ListView1.DataBind();
+                    Calculate_Total();
+                }
             }
+            else
+            {
+                Response.Redirect("../Default.aspx");
+            }
+            
             
         }
 

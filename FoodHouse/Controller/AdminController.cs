@@ -59,5 +59,21 @@ namespace FoodHouse.Controller
 
             }
         }
+
+        public bool AdminLogin(string email, string password)
+        {
+            using (DbContextDataContext db = new DbContextDataContext())
+            {
+                var data = db.AdminLogIn(email, password).ToArray();
+                if (data.Count() == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

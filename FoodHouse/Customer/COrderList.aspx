@@ -5,13 +5,21 @@
     <asp:Repeater ID="Repeater1" OnItemDataBound="Repeater1_ItemDataBound" runat="server">
        
         <ItemTemplate>
-            <div>
-                <asp:Label Text="Order Number : " runat="server" />
-                <asp:Label Text='<%#Eval("ONumber") %>' ID="lblONumber" runat="server" />
+            <div class="d-flex flex-column w-75 m-2  " >
+                <div class="m-1">
+                    <asp:Label Text="Order Number : " runat="server" />
+                    <asp:Label Text='<%#Eval("ONumber") %>' ID="lblONumber" runat="server" />
+                </div>
+               
 
-                <div style="float: right;">
+                
+                <div class="m-1">
                     <asp:Label Text="Order Date: " runat="server" />
                     <asp:Label ID="lblODate" Text='<%#Eval("ODate") %>' runat="server" />
+                </div>
+                <div class="m-1"  >
+                    <asp:Label Text="Total Price: " runat="server" />
+                    <asp:Label ID="lblTotalPrice"  Text='<%#Eval("GrandTotal") %>' runat="server" />
                 </div>
 
             </div>
@@ -51,39 +59,6 @@
        
     </asp:Repeater>
     
-    <div>
-        <asp:Label Text="Order Number : " runat="server" />
-        <asp:Label Text="00000001 " runat="server" />
-
-        <div style="float:right;">
-            <asp:Label Text="Order Date: " runat="server" />
-            <asp:Label Text="11/3/2020" runat="server" />
-        </div>
-
-    </div>
-
-
-    <table class="table-responsive-xl table table-hover ">
-       <tr >
-           <th >NO</th>
-           <th >FoodName</th>
-           <th >Qty</th>
-           <th >Price</th>
-           <th >Discount Price</th>
-           <th >GrandTotal</th>
-           <th >Status</th>
-       </tr>
-        <tr>
-            <td>1</td>
-            <td>Item1</td>
-            <td>3</td>
-            <td>3000</td>
-            <td>1500</td>
-            <td>1500</td>
-            <td><span style="color:red;">Order Pending</span></td>
-        </tr>
-    </table>
-
-    
+   
 
 </asp:Content>
