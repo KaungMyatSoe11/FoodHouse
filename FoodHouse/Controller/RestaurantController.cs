@@ -80,5 +80,16 @@ namespace FoodHouse.Controller
                 }
             }
         }
+
+
+        public List<vi_Order> OrderList(String Date,String Status)
+        {
+            using (DbContextDataContext db=new DbContextDataContext())
+            {
+                var data = (from a in db.vi_Orders where a.ODate == Date && a.Status==Status select a).ToList();
+
+                return data;
+            }
+        }
     }
 }

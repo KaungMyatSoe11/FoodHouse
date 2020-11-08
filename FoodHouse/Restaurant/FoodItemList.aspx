@@ -22,7 +22,7 @@
         <table class="tbl" >
             <tr>
                 <td style="text-align: center">
-                    <asp:Image ID="Image2" runat="server"  CssClass="img" ImageUrl=<%# "data:image/jpg;base64,"+Convert.ToBase64String(((byte[]) Eval("Image")).ToArray()) %>  Width="300px" Height="200px"/>
+                    <asp:Image ID="Image2" runat="server"  CssClass="img" ImageUrl='<%# "data:image/jpg;base64,"+Convert.ToBase64String(((byte[]) Eval("Image")).ToArray()) %>'  Width="300px" Height="200px"/>
                 </td>
             </tr>
             <tr>

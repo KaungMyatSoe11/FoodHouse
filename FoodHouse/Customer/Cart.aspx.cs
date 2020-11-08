@@ -17,7 +17,7 @@ namespace FoodHouse.Customer
         private int Subtotal = 0, Grandtotal = 0, Tax = 250, Discounttotal = 0;
         List<CheckoutFood> checkoutFoods = new List<CheckoutFood>();
         List<cart> carts = new List<cart>();
-        private int index;
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {

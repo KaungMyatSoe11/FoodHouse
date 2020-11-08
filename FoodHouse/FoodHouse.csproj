@@ -137,6 +137,7 @@
     <Content Include="Restaurant\f3.jpg" />
     <Content Include="Restaurant\FoodItemList.aspx" />
     <Content Include="Restaurant\Order.aspx" />
+    <Content Include="Restaurant\OrderDetailList.aspx" />
     <Content Include="Restaurant\Restaurant.aspx" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -431,6 +432,13 @@
     </Compile>
     <Compile Include="Restaurant\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\OrderDetailList.aspx.cs">
+      <DependentUpon>OrderDetailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\OrderDetailList.aspx.designer.cs">
+      <DependentUpon>OrderDetailList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Restaurant\Restaurant.aspx.cs">
       <DependentUpon>Restaurant.aspx</DependentUpon>

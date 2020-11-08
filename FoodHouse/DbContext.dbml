@@ -178,6 +178,18 @@
       <Column Name="GrandTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vi_Order" Member="vi_Orders">
+    <Type Name="vi_Order">
+      <Column Name="OID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ONumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ODate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeliveryManID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GrandTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_DeleteAdmin" Method="SP_DeleteAdmin">
     <Parameter Name="param1" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />

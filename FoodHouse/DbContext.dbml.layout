@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.625" name="DbContext">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 19.75" name="DbContext">
   <DataContextMoniker Name="/DbContextDataContext" />
   <nestedChildShapes>
     <classShape Id="54370684-9e5d-4ff9-9514-fb0040e6297a" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
@@ -33,7 +33,7 @@
         <classShapeMoniker Id="03b4b788-96d0-4334-bf02-9558b36ab335" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 2.78449625651042); (6.375 : 2.78449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.78449625651042); (6.375 : 2.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DbContextDataContext/tbl_City/tbl_City_tbl_Restaurant" />
       <nodes>
         <classShapeMoniker Id="269d743c-5020-4548-9ae1-7cae6f13a671" />
@@ -104,6 +104,12 @@
       <DataClassMoniker Name="/DbContextDataContext/vi_FoodOrderList" />
       <nestedChildShapes>
         <elementListCompartment Id="987d028a-0261-4e42-9af9-ec2029c590be" absoluteBounds="2.14, 12.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48913b58-a476-42d8-b337-7daa989c6869" absoluteBounds="0.75, 17.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DbContextDataContext/vi_Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97b168ec-08cd-42dd-bded-9d9bc8a94642" absoluteBounds="0.76500000000000012, 17.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
