@@ -157,6 +157,7 @@
     <Content Include="Customer\Customer.Master" />
     <None Include="packages.config" />
     <Content Include="Restaurant\FoodEntry.aspx" />
+    <Content Include="Restaurant\ROrderList.aspx" />
     <Content Include="Restaurant\View.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -451,6 +452,13 @@
     </Compile>
     <Compile Include="Restaurant\RestaurantMasterPage.Master.designer.cs">
       <DependentUpon>RestaurantMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\ROrderList.aspx.cs">
+      <DependentUpon>ROrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\ROrderList.aspx.designer.cs">
+      <DependentUpon>ROrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Restaurant\View.aspx.cs">
       <DependentUpon>View.aspx</DependentUpon>
