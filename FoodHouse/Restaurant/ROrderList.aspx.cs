@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -21,7 +22,7 @@ namespace FoodHouse.Restaurant
             {
                 MultiView1.ActiveViewIndex = 0;
                 Status = "Order Pending";
-                dtpDate.Text =  DateTime.UtcNow.ToShortDateString();
+                dtpDate.Text = DateTime.Now.ToShortDateString();
                 ShowOrderList(dtpDate.Text,Status);
             }
             
@@ -61,40 +62,61 @@ namespace FoodHouse.Restaurant
         protected void btnOrderPreparing_Click(object sender, EventArgs e)
         {
             Status = "Order Preparing";
-            DateTime date = DateTime.Parse(dtpDate.Text);
-            if (dtpDate.Text != null)
+            
+            if (dtpDate.Text != string.Empty)
             {
+                DateTime date = DateTime.Parse(dtpDate.Text);
                 ShowOrderList(date.ToString("d"), Status);
+            }
+            else
+            {
+                string date = DateTime.Now.ToShortDateString();
+                ShowOrderList(date, Status);
             }
         }
 
         protected void btnOrderPending_Click(object sender, EventArgs e)
         {
             Status = "Order Pending";
-            DateTime date = DateTime.Parse(dtpDate.Text);
-            if (dtpDate.Text != null)
+            if (dtpDate.Text != string.Empty)
             {
+                DateTime date = DateTime.Parse(dtpDate.Text);
                 ShowOrderList(date.ToString("d"), Status);
+            }
+            else
+            {
+                string date = DateTime.Now.ToShortDateString();
+                ShowOrderList(date, Status);
             }
         }
 
         protected void btnDeliveried_Click(object sender, EventArgs e)
         {
             Status = "Deliveried";
-            DateTime date = DateTime.Parse(dtpDate.Text);
-            if (dtpDate.Text != null)
+            if (dtpDate.Text != string.Empty)
             {
+                DateTime date = DateTime.Parse(dtpDate.Text);
                 ShowOrderList(date.ToString("d"), Status);
+            }
+            else
+            {
+                string date = DateTime.Now.ToShortDateString();
+                ShowOrderList(date, Status);
             }
         }
 
         protected void btnOrderNotAvailable_Click(object sender, EventArgs e)
         {
             Status = "Order Not Available";
-            DateTime date = DateTime.Parse(dtpDate.Text);
-            if (dtpDate.Text != null)
+            if (dtpDate.Text != string.Empty)
             {
+                DateTime date = DateTime.Parse(dtpDate.Text);
                 ShowOrderList(date.ToString("d"), Status);
+            }
+            else
+            {
+                string date = DateTime.Now.ToShortDateString();
+                ShowOrderList(date, Status);
             }
         }
 

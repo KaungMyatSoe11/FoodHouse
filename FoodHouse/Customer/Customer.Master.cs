@@ -16,10 +16,25 @@ namespace FoodHouse.Customer
             {
                 var data =(List<cart>) Session["c"];
                 lblcart.Text = data.Count().ToString() ;
+                lblcart.Visible = true;
             }
             if (Session["CID"] == null)
             {
                 Response.Redirect("../SignIn.aspx");
+            }
+            else
+            {
+                btnSignin.Text = "Sign Out";
+            }
+        }
+
+        protected void btnSignin_Click(object sender, EventArgs e)
+        {
+            if (btnSignin.Text == "Sign Out")
+            {
+                Session["CID"] = null;
+
+                Response.Redirect("../Default.aspx");
             }
         }
     }

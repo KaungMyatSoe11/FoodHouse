@@ -60,6 +60,9 @@
             padding: 21px 90px 0px;
             text-decoration: none;
         }
+        .outline-none{
+            outline:none;
+        }
     </style>
       <link href="../Content/bootstrap.css" rel="stylesheet" />
     <script src="../bootstrap-4.3.1-dist/js/bootstrap.js"></script>
@@ -86,14 +89,14 @@
             </li>
              <li class="nav-item active">
                 <a class="nav-link" href="ROrderList.aspx">OrderList <span>
-                    <asp:Label Text="" ID="lblOrdercount" CssClass="rounded-pill" runat="server" /></span></a>
+                    <asp:Label ID="lblOrdercount" CssClass="bg-light text-dark rounded-pill pl-1 pr-1" runat="server" Visible="False" /></span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="Discount.aspx">Discount</a>
             </li>
              <li class="nav-item active">
                 <a class="nav-link" href="../SignIn.aspx">
-                    <asp:Button Text="SignIn" ID="btnSignin" runat="server" /></a>
+                    <asp:Button Text="SignIn" ID="btnSignin" runat="server" CssClass=" btn  border-0 outline-none" ForeColor="White" OnClick="btnSignin_Click" CausesValidation="False" UseSubmitBehavior="False" ValidateRequestMode="Disabled" /></a>
             </li>
         </ul>
     </nav>

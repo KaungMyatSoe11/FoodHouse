@@ -15,6 +15,16 @@ namespace FoodHouse.Admin
             {
                 Response.Redirect("../SignIn.aspx");
             }
+
+        }
+
+        protected void btnSignin_Click(object sender, EventArgs e)
+        {
+            if (btnSignin.Text == "Sign Out")
+            {
+                Session["AID"] = null;
+                Response.Redirect("../Default.aspx");
+            } 
         }
     }
 }

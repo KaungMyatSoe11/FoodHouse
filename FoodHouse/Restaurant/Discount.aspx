@@ -26,7 +26,7 @@
                 <asp:TextBox runat="server" ID="txtDiscount"  Width="300px"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True"  ControlToValidate="txtDiscount"></asp:RequiredFieldValidator>
            
-         <asp:LinkButton ID="btnAdd" runat="server" CssClass="linkbtn" Width="80px" OnClick="btnAdd_Click"   >Add</asp:LinkButton>
+         <asp:LinkButton ID="btnAdd" runat="server" CssClass=" btn btn-primary" Width="80px" OnClick="btnAdd_Click"   >Add</asp:LinkButton>
 
          <asp:Label ID="lblerror" runat="server" Text="" ForeColor="Red"></asp:Label>
           </div>

@@ -61,13 +61,17 @@
                 <a class="nav-link" href="">Category</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="City.aspx">City</a>
+                <a class="nav-link" href="CityList.aspx">City</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="RestaurantList.aspx">Restaurant</a>
             </li>
              <li class="nav-item active">
                 <a class="nav-link" href="DeliveryManList.aspx">DeliverMan</a>
+            </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="../SignIn.aspx">
+                    <asp:Button Text="SignIn" ID="btnSignin" runat="server" CssClass=" btn  border-0" ForeColor="White" OnClick="btnSignin_Click" /></a>
             </li>
         </ul>
     </nav>
