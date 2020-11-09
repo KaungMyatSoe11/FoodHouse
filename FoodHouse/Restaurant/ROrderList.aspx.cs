@@ -11,14 +11,17 @@ namespace FoodHouse.Restaurant
 {
     public partial class ROrderList : System.Web.UI.Page
     {
+        DbContextDataContext db = new DbContextDataContext();
         RestaurantController restaurantController = new RestaurantController();
         String Status;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
+                MultiView1.ActiveViewIndex = 0;
                 Status = "Order Pending";
-                dtpDate.Text = DateTime.Now.ToShortDateString();
+                dtpDate.Text =  DateTime.UtcNow.ToShortDateString();
                 ShowOrderList(dtpDate.Text,Status);
             }
             
@@ -49,7 +52,8 @@ namespace FoodHouse.Restaurant
         protected void btnView_Command(object sender, CommandEventArgs e)
         {
             Session["OID"] = e.CommandArgument;
-            Response.Redirect("OrderDetailList.aspx");
+            MultiView1.ActiveViewIndex = 1;
+            ShowGridViewData();
         }
 
         
@@ -62,6 +66,56 @@ namespace FoodHouse.Restaurant
             {
                 ShowOrderList(date.ToString("d"), Status);
             }
+        }
+
+        protected void btnOrderPending_Click(object sender, EventArgs e)
+        {
+            Status = "Order Pending";
+            DateTime date = DateTime.Parse(dtpDate.Text);
+            if (dtpDate.Text != null)
+            {
+                ShowOrderList(date.ToString("d"), Status);
+            }
+        }
+
+        protected void btnDeliveried_Click(object sender, EventArgs e)
+        {
+            Status = "Deliveried";
+            DateTime date = DateTime.Parse(dtpDate.Text);
+            if (dtpDate.Text != null)
+            {
+                ShowOrderList(date.ToString("d"), Status);
+            }
+        }
+
+        protected void btnOrderNotAvailable_Click(object sender, EventArgs e)
+        {
+            Status = "Order Not Available";
+            DateTime date = DateTime.Parse(dtpDate.Text);
+            if (dtpDate.Text != null)
+            {
+                ShowOrderList(date.ToString("d"), Status);
+            }
+        }
+
+        protected void ShowGridViewData()
+        {
+            var data = restaurantController.OrderDetailList(Convert.ToInt32(Session["OID"]));
+            GridView1.DataSource = data;
+            GridView1.DataBind();
+            var cinfo=data.FirstOrDefault();
+            lblGrandtotal.Text = cinfo.GrandTotal.ToString();
+            txtShippingAddress.Text = cinfo.ShippingAddress.ToString();
+          
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Status = DropDownList1.Text;
+            restaurantController.OrderStatuUpdate(Status,Convert.ToInt32(Session["OID"]));
+            ScriptManager.RegisterClientScriptBlock
+                      (this, this.GetType(), "alertMessage", "alert('True...')", true);
+            Response.Redirect("ROrderList.aspx");
         }
     }
 }

@@ -104,11 +104,12 @@ namespace FoodHouse.Customer
                     orderDetails.Add(orderDetailModel);
 
                 }
+
                 orderController.OrderInsert(order, orderDetails);
                 ScriptManager.RegisterClientScriptBlock
                       (this, this.GetType(), "alertMessage", "alert('Ordering...')", true);
                 Session["c"] = null;
-                //Response.Redirect("../Default.aspx");
+                Response.Redirect("../Default.aspx");
 
             }
             else

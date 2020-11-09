@@ -75,7 +75,7 @@
     <form id="form1" runat="server">
          <asp:ScriptManager runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-        <a class="nav-item text-decoration-none" href="../Index.aspx"><h1>FoodHouse</h1></a>
+        <a class="nav-item text-decoration-none" href="../Default.aspx"><h1>FoodHouse</h1></a>
         <ul class="navbar-nav form-inline ml-auto">
             
             <li class="nav-item active">
@@ -84,8 +84,16 @@
             <li class="nav-item active">
                 <a class="nav-link" href="FoodItemList.aspx">FoodItemList</a>
             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="ROrderList.aspx">OrderList <span>
+                    <asp:Label Text="" ID="lblOrdercount" CssClass="rounded-pill" runat="server" /></span></a>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="Discount.aspx">Discount</a>
+            </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="../SignIn.aspx">
+                    <asp:Button Text="SignIn" ID="btnSignin" runat="server" /></a>
             </li>
         </ul>
     </nav>

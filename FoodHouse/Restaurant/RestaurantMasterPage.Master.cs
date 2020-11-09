@@ -11,7 +11,22 @@ namespace FoodHouse.Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["RID"] == null)
+            {
+                Response.Redirect("../SignIn.aspx");
+            }
+            else
+            {
+                using(DbContextDataContext db=new DbContextDataContext())
+                {
+                    var count = (from a in db.tbl_Orders where a.RID == Convert.ToInt32(Session["RID"]) select a).Count();
+                    lblOrdercount.Text = count.ToString();
 
+                       
+                }
+                btnSignin.Text = "Sign Out";
+            
+            }
         }
     }
 }

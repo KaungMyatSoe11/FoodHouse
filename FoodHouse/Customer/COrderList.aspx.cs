@@ -14,17 +14,14 @@ namespace FoodHouse.Customer
         protected void Page_Load(object sender, EventArgs e)
         {
             List<vi_FoodOrderList> _FoodOrderLists = new List<vi_FoodOrderList>();
-            
-            var data =(from a in db.tbl_Orders where a.CustomerID== Convert.ToInt32(Session["CID"]) && a.ONumber !=null orderby a.ODate descending ,a.ONumber  descending select a).ToList();
-            //foreach(var d in data)
-            //{
-            //    var Ofood = (from a in db.vi_FoodOrderLists where a.CustomerID == Convert.ToInt32(Session["CID"]) && a.ODate == d.ODate select a).FirstOrDefault();
-            //    _FoodOrderLists.Add(Ofood);
-            //}
-            
-            
-            Repeater1.DataSource = data;
-            Repeater1.DataBind();
+
+            if (!IsPostBack)
+            {
+                var data = (from a in db.tbl_Orders where a.CustomerID == Convert.ToInt32(Session["CID"]) && a.ONumber != null orderby a.ODate descending, a.ONumber descending select a).ToList();
+                Repeater1.DataSource = data;
+                Repeater1.DataBind();
+            }
+           
         }
 
         protected void Repeater1_PreRender(object sender, EventArgs e)

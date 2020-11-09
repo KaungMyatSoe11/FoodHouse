@@ -91,5 +91,27 @@ namespace FoodHouse.Controller
                 return data;
             }
         }
+
+        public List<vi_FoodOrderList> OrderDetailList(int OID)
+        {
+            using (DbContextDataContext db = new DbContextDataContext())
+            {
+                var data = (from a in db.vi_FoodOrderLists where a.OID ==OID  select a).ToList();
+
+                return data;
+            }
+        }
+
+        public void OrderStatuUpdate(String Status,int OID)
+        {
+            using(DbContextDataContext db=new DbContextDataContext())
+            {
+                var data = (from a in db.tbl_Orders where a.OID == OID select a).FirstOrDefault();
+
+                data.Status = Status;
+
+                db.SubmitChanges();
+            }
+        }
     }
 }

@@ -25,6 +25,8 @@ namespace FoodHouse.Controller
 
                 db.tbl_Orders.InsertOnSubmit(_Order);
                 db.SubmitChanges();
+                //--order
+                
 
                 var OrderID = (from a in db.tbl_Orders select a.OID).Max();
                 
